@@ -1,0 +1,157 @@
+/* General Game Container */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h1 {
+    font-size: 40px;
+    color: #4b0082;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Game Board */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    background-color: #4b0082;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+  
+  /* Tile Styles */
+  .tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: #ffffff;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tile-2 {
+    background-color: #ff9999; /* Light Red */
+    color: #000000;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .tile-4 {
+    background-color: #ff6666; /* Red */
+    color: #000000;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .tile-8 {
+    background-color: #3399ff; /* Light Blue */
+    animation: pop 0.2s ease-in-out;
+  }
+  
+  .tile-16 {
+    background-color: #3366ff; /* Blue */
+    animation: pop 0.2s ease-in-out;
+  }
+  
+  .tile-32 {
+    background-color: #9966ff; /* Light Violet */
+    color: #ffffff;
+  }
+  
+  .tile-64 {
+    background-color: #6600cc; /* Violet */
+    color: #ffffff;
+  }
+  
+  .tile-128 {
+    background-color: #cc33ff; /* Light Purple */
+  }
+  
+  .tile-256 {
+    background-color: #9900cc; /* Purple */
+  }
+  
+  .tile-512 {
+    background-color: #ff66ff; /* Bright Pink */
+  }
+  
+  .tile-1024 {
+    background-color: #cc0099; /* Dark Pink */
+  }
+  
+  .tile-2048 {
+    background-color: #660066; /* Deep Purple */
+    animation: pulse 0.6s infinite ease-in-out;
+  }
+  
+  .tile-empty {
+    background-color: #d9d9d9; /* Neutral Gray */
+    color: transparent;
+  }
+  
+  /* Overlay for Game Over */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ff3333; /* Bright Red */
+    font-size: 36px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
